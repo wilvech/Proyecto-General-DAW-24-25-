@@ -13,13 +13,13 @@ function sendEmail($to, $subject, $message)
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com'; // Cambiar si usas otro proveedor
         $mail->SMTPAuth = true;
-        $mail->Username = 'TU_CORREO@gmail.com';
-        $mail->Password = 'TU_CONTRASEÑA_O_APP_PASSWORD';
+        $mail->Username = 'ecotiendatest@gmail.com';
+        $mail->Password = '1234,Abcd';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
         // Emisor y destinatario
-        $mail->setFrom('TU_CORREO@gmail.com', 'Tienda Ecológica');
+        $mail->setFrom('ecotiendatest@gmail.com', 'Tienda Ecológica');
         $mail->addAddress($to);
 
         // Contenido
