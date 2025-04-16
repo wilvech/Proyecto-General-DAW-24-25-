@@ -1,29 +1,40 @@
 <?php
 require_once '../includes/header.php';
+require_once '../components/flash_message.php';
 
 $token = $_GET['token'] ?? '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['reset_tokens'][$token])) {
-    $newPassword = $_POST['password'];
-    $user_id = $_SESSION['reset_tokens'][$token]['user_id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $newPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    if (time() < $_SESSION['reset_tokens'][$token]['expires']) {
-        $hash = password_hash($newPassword, PASSWORD_DEFAULT);
+    $stmt = $pdo->prepare("SELECT * FROM tokens WHERE token = :token AND expires_at > NOW()");
+    $stmt->execute([':token' => $token]);
+    $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($data) {
         $stmt = $pdo->prepare("UPDATE usuarios SET password = :password WHERE id = :id");
-        $stmt->execute([':password' => $hash, ':id' => $user_id]);
+        $stmt->execute([
+            ':password' => $newPassword,
+            ':id' => $data['usuario_id']
+        ]);
 
-        unset($_SESSION['reset_tokens'][$token]);
-        echo "<p>Contraseña actualizada. <a href='login.php'>Inicia sesión</a></p>";
+        $stmt = $pdo->prepare("DELETE FROM tokens WHERE id = :id");
+        $stmt->execute([':id' => $data['id']]);
+
+        $_SESSION['flash_success'] = 'Contraseña restablecida correctamente.';
+        header('Location: login.php');
+        exit;
     } else {
-        echo "<p>El token ha expirado.</p>";
+        $_SESSION['flash_error'] = 'Token inválido o expirado.';
     }
 }
 ?>
 
 <h1>Restablecer Contraseña</h1>
+
 <form method="POST">
-    <label>Nueva Contraseña: <input type="password" name="password" required></label><br><br>
-    <button type="submit" class="btn">Actualizar</button>
+    <label>Nueva Contraseña: <input type="password" name="password" required></label>
+    <button type="submit" class="btn">Actualizar contraseña</button>
 </form>
 
 <?php require_once '../includes/footer.php'; ?>

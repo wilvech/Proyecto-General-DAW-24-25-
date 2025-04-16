@@ -6,7 +6,7 @@ $categoriaSeleccionada = $_GET['categoria'] ?? '';
 $stmtCategorias = $pdo->query("SELECT DISTINCT categoria FROM productos");
 $categorias = $stmtCategorias->fetchAll(PDO::FETCH_COLUMN);
 
-if ($categoriaSeleccionada) {
+if ($categoriaSeleccionada !== '') {
     $stmt = $pdo->prepare("SELECT * FROM productos WHERE categoria = :categoria");
     $stmt->execute([':categoria' => $categoriaSeleccionada]);
 } else {
@@ -20,7 +20,7 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <div style="margin-bottom: 20px;">
     <?php foreach ($categorias as $cat): ?>
-        <a href="?categoria=<?= urlencode($cat) ?>" class="btn"><?= htmlspecialchars($cat) ?></a>
+        <a href="?categoria=<?= urlencode($cat); ?>" class="btn"><?= htmlspecialchars($cat); ?></a>
     <?php endforeach; ?>
     <a href="catalog.php" class="btn">Ver Todas</a>
 </div>

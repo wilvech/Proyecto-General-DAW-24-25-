@@ -3,30 +3,31 @@ require_once '../includes/config.php';
 require_once '../includes/db_connect.php';
 require_once '../vendor/autoload.php';
 
+\Stripe\Stripe::setApiKey('sk_test_51RESaU06F7Q4HFlR3mupwIPmU2iZ2wLrPQf7JbqkWmAN9vRHbo2b1W0lfopcThUHJgMJEFYOs1PPtluskvxVIKh000rWWMXmEA');
+
+session_start();
+
 if (!isset($_SESSION['usuario_id']) || empty($_SESSION['cart'])) {
-    header('Location: ' . BASE_URL . '/auth/login.php');
+    header('Location: ../auth/login.php');
     exit;
 }
 
 $line_items = [];
 foreach ($_SESSION['cart'] as $product_id => $qty) {
-    $stmt = $pdo->prepare("SELECT nombre, precio FROM productos WHERE id = :id");
-    $stmt->execute([':id' => $product_id]);
-    $prod = $stmt->fetch(PDO::FETCH_ASSOC);
-
+    $stmt = $pdo->prepare("SELECT nombre, precio FROM productos WHERE id = ?");
+    $stmt->execute([$product_id]);
+    $prod = $stmt->fetch();
     if ($prod) {
         $line_items[] = [
             'price_data' => [
                 'currency' => 'eur',
                 'product_data' => ['name' => $prod['nombre']],
-                'unit_amount' => $prod['precio'] * 100
+                'unit_amount' => $prod['precio'] * 100,
             ],
-            'quantity' => $qty
+            'quantity' => $qty,
         ];
     }
 }
-
-\Stripe\Stripe::setApiKey(STRIPE_SECRET_KEY);
 
 $session = \Stripe\Checkout\Session::create([
     'payment_method_types' => ['card'],

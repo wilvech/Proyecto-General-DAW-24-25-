@@ -1,8 +1,8 @@
--- Crear la base de datos
+-- Crear base de datos
 CREATE DATABASE IF NOT EXISTS tienda_ecologica DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE tienda_ecologica;
 
--- Tabla de usuarios
+-- Usuarios
 CREATE TABLE IF NOT EXISTS usuarios (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
@@ -14,17 +14,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Tabla de tokens para recuperación/reset
-CREATE TABLE IF NOT EXISTS tokens (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT NOT NULL,
-    token VARCHAR(255) NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    expires_at DATETIME NOT NULL,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
-);
-
--- Tabla de productos
+-- Productos
 CREATE TABLE IF NOT EXISTS productos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
@@ -36,7 +26,7 @@ CREATE TABLE IF NOT EXISTS productos (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Tabla de pedidos
+-- Pedidos
 CREATE TABLE IF NOT EXISTS pedidos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   usuario_id INT NOT NULL,
@@ -46,7 +36,7 @@ CREATE TABLE IF NOT EXISTS pedidos (
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
--- Tabla de detalles del pedido
+-- Detalles de pedido
 CREATE TABLE IF NOT EXISTS pedido_detalles (
   id INT AUTO_INCREMENT PRIMARY KEY,
   pedido_id INT NOT NULL,
@@ -57,7 +47,7 @@ CREATE TABLE IF NOT EXISTS pedido_detalles (
   FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE
 );
 
--- Tabla de mensajes de contacto
+-- Mensajes de contacto
 CREATE TABLE IF NOT EXISTS mensajes_contacto (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,

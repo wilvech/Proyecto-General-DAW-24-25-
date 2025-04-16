@@ -1,15 +1,16 @@
 <?php
+session_start();
 require_once '../includes/header.php';
 
 if (!isset($_SESSION['usuario_id'])) {
-    echo "<p>Acceso denegado. <a href='" . BASE_URL . "/auth/login.php'>Inicia sesión</a></p>";
+    echo "<p>Acceso denegado. <a href='../auth/login.php'>Iniciar sesión</a></p>";
     require_once '../includes/footer.php';
     exit;
 }
 
 $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
 $stmt->execute([':id' => $_SESSION['usuario_id']]);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
+$user = $stmt->fetch();
 ?>
 
 <h1>Mi Perfil</h1>

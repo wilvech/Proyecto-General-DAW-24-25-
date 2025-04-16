@@ -1,6 +1,8 @@
 </main>
+
 <footer>
-    <p>&copy; <?php echo date('Y'); ?> - <?php echo SITE_NAME; ?></p>
+    <p>&copy; <?= date('Y') ?> - <?= SITE_NAME ?></p>
 </footer>
+
 </body>
 </html>

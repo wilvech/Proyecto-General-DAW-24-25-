@@ -1,6 +1,7 @@
 # Enrutamiento simple para Apache
 RewriteEngine On
-RewriteBase /mi_tienda_ecologica/
+# RewriteBase /mi_tienda_ecologica/
+RewriteBase /Proyecto-General-DAW-24-25-/mi_tienda_ecologica/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)$ index.php [QSA,L]

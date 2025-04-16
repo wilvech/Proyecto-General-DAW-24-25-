@@ -1,8 +1,9 @@
 <?php
+session_start();
 require_once '../includes/header.php';
 
 if (!isset($_SESSION['usuario_id'])) {
-    echo "<p>Acceso denegado. <a href='" . BASE_URL . "/auth/login.php'>Inicia sesión</a></p>";
+    echo "<p>Acceso denegado. <a href='../auth/login.php'>Inicia sesión</a></p>";
     require_once '../includes/footer.php';
     exit;
 }
@@ -10,7 +11,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
 <h1>Panel del Usuario</h1>
 <p>Bienvenido/a <?= htmlspecialchars($_SESSION['usuario_email']) ?></p>
-<p>Desde aquí puedes gestionar tu perfil y acceder al historial de compras (futuro).</p>
+<p>Desde aquí puedes gestionar tu perfil, tus pedidos y más funcionalidades futuras.</p>
 
 <a href="profile.php" class="btn">Ver Perfil</a>
 
