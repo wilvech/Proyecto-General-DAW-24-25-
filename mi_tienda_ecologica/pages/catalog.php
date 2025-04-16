@@ -1,12 +1,12 @@
 <?php
 require_once '../includes/header.php';
 
-$categoriaSeleccionada = isset($_GET['categoria']) ? $_GET['categoria'] : '';
+$categoriaSeleccionada = $_GET['categoria'] ?? '';
 
 $stmtCategorias = $pdo->query("SELECT DISTINCT categoria FROM productos");
 $categorias = $stmtCategorias->fetchAll(PDO::FETCH_COLUMN);
 
-if ($categoriaSeleccionada != '') {
+if ($categoriaSeleccionada) {
     $stmt = $pdo->prepare("SELECT * FROM productos WHERE categoria = :categoria");
     $stmt->execute([':categoria' => $categoriaSeleccionada]);
 } else {
@@ -20,7 +20,7 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <div style="margin-bottom: 20px;">
     <?php foreach ($categorias as $cat): ?>
-        <a href="?categoria=<?= urlencode($cat); ?>" class="btn"><?= htmlspecialchars($cat); ?></a>
+        <a href="?categoria=<?= urlencode($cat) ?>" class="btn"><?= htmlspecialchars($cat) ?></a>
     <?php endforeach; ?>
     <a href="catalog.php" class="btn">Ver Todas</a>
 </div>
@@ -28,10 +28,10 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="product-grid">
     <?php foreach ($productos as $prod): ?>
         <div class="product-item">
-            <img src="<?= BASE_URL . '/assets/images/productos/' . $prod['imagen'] ?>" alt="<?= htmlspecialchars($prod['nombre']) ?>" />
+            <img src="<?= BASE_URL ?>/assets/images/productos/<?= htmlspecialchars($prod['imagen']) ?>" alt="<?= htmlspecialchars($prod['nombre']) ?>" />
             <h3><?= htmlspecialchars($prod['nombre']) ?></h3>
             <p>€<?= htmlspecialchars($prod['precio']) ?></p>
-            <a href="<?= BASE_URL . '/pages/cart.php?add=' . $prod['id'] ?>" class="btn">Añadir al carrito</a>
+            <a href="<?= BASE_URL ?>/pages/cart.php?add=<?= $prod['id'] ?>" class="btn">Añadir al carrito</a>
         </div>
     <?php endforeach; ?>
 </div>

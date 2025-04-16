@@ -1,6 +1,4 @@
-<?php
-require_once 'includes/header.php';
-?>
+<?php require_once 'includes/header.php'; ?>
 
 <section class="hero-banner">
     <h1>Frutas y Verduras Ecológicas</h1>
@@ -15,7 +13,7 @@ require_once 'includes/header.php';
         $stmt = $pdo->query("SELECT * FROM productos ORDER BY id DESC LIMIT 4");
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<div class='product-item'>";
-            echo "<img src='uploads/productos/" . htmlspecialchars($row['imagen']) . "' alt='" . htmlspecialchars($row['nombre']) . "' />";
+            echo "<img src='" . BASE_URL . "/assets/images/productos/" . htmlspecialchars($row['imagen']) . "' alt='" . htmlspecialchars($row['nombre']) . "' />";
             echo "<h3>" . htmlspecialchars($row['nombre']) . "</h3>";
             echo "<p>€" . htmlspecialchars($row['precio']) . "</p>";
             echo "<a href='pages/cart.php?add=" . $row['id'] . "' class='btn'>Añadir al carrito</a>";
