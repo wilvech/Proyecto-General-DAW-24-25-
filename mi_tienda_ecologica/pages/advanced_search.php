@@ -9,16 +9,16 @@ $precio_max = isset($_GET['precio_max']) ? $_GET['precio_max'] : '';
 
 // Construir consulta de forma dinámica
 $query = "SELECT * FROM productos WHERE 1=1";
-if(!empty($nombre)) {
+if (!empty($nombre)) {
     $query .= " AND nombre LIKE '%$nombre%'";
 }
-if(!empty($categoria)) {
+if (!empty($categoria)) {
     $query .= " AND categoria LIKE '%$categoria%'";
 }
-if(!empty($precio_min)) {
+if (!empty($precio_min)) {
     $query .= " AND precio >= $precio_min";
 }
-if(!empty($precio_max)) {
+if (!empty($precio_max)) {
     $query .= " AND precio <= $precio_max";
 }
 
@@ -36,13 +36,13 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </form>
 
 <div class="product-grid">
-    <?php foreach($results as $prod): ?>
-    <div class="product-item">
-        <img src="<?php echo BASE_URL.'/assets/images/productos/'.$prod['imagen']; ?>" alt="<?php echo $prod['nombre']; ?>" />
-        <h3><?php echo $prod['nombre']; ?></h3>
-        <p>€<?php echo $prod['precio']; ?></p>
-        <a href="<?php echo BASE_URL.'/pages/cart.php?add='.$prod['id']; ?>" class="btn">Añadir al carrito</a>
-    </div>
+    <?php foreach ($results as $prod): ?>
+        <div class="product-item">
+            <img src="<?php echo BASE_URL . '/assets/images/productos/' . $prod['imagen']; ?>" alt="<?php echo $prod['nombre']; ?>" />
+            <h3><?php echo $prod['nombre']; ?></h3>
+            <p>€<?php echo $prod['precio']; ?></p>
+            <a href="<?php echo BASE_URL . '/pages/cart.php?add=' . $prod['id']; ?>" class="btn">Añadir al carrito</a>
+        </div>
     <?php endforeach; ?>
 </div>
 

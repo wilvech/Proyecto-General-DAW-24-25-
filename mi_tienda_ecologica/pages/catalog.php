@@ -27,12 +27,12 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="product-grid">
     <?php foreach ($productos as $prod): ?>
-    <div class="product-item">
-        <img src="<?= BASE_URL . '/assets/images/productos/' . $prod['imagen'] ?>" alt="<?= htmlspecialchars($prod['nombre']) ?>" />
-        <h3><?= htmlspecialchars($prod['nombre']) ?></h3>
-        <p>€<?= htmlspecialchars($prod['precio']) ?></p>
-        <a href="<?= BASE_URL . '/pages/cart.php?add=' . $prod['id'] ?>" class="btn">Añadir al carrito</a>
-    </div>
+        <div class="product-item">
+            <img src="<?= BASE_URL . '/assets/images/productos/' . $prod['imagen'] ?>" alt="<?= htmlspecialchars($prod['nombre']) ?>" />
+            <h3><?= htmlspecialchars($prod['nombre']) ?></h3>
+            <p>€<?= htmlspecialchars($prod['precio']) ?></p>
+            <a href="<?= BASE_URL . '/pages/cart.php?add=' . $prod['id'] ?>" class="btn">Añadir al carrito</a>
+        </div>
     <?php endforeach; ?>
 </div>
 

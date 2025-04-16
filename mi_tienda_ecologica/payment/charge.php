@@ -19,4 +19,3 @@ try {
 } catch (\Stripe\Exception\CardException $e) {
   echo json_encode(['success' => false, 'error' => $e->getMessage()]);
 }
-?>

@@ -7,4 +7,3 @@ if (!isset($_SESSION['usuario_id'])) {
     header('Location: ' . BASE_URL . '/auth/login.php');
     exit();
 }
-?>

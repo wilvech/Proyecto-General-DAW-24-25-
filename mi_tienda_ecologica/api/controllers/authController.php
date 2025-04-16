@@ -2,7 +2,8 @@
 require_once __DIR__ . '/../../includes/db_connect.php';
 require_once __DIR__ . '/../utils/jwt.php';
 
-function login($email, $password) {
+function login($email, $password)
+{
     global $pdo;
 
     $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email LIMIT 1");
@@ -17,7 +18,8 @@ function login($email, $password) {
     return ['success' => false, 'message' => 'Credenciales inválidas'];
 }
 
-function register($data) {
+function register($data)
+{
     global $pdo;
 
     $passwordHash = password_hash($data['password'], PASSWORD_DEFAULT);

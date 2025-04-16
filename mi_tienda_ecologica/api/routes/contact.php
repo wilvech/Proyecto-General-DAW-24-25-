@@ -1,4 +1,5 @@
 <?php
+
 use Slim\Routing\RouteCollectorProxy;
 
 require_once __DIR__ . '/../controllers/contactController.php';

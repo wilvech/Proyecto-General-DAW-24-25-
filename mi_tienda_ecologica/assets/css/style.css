@@ -8,7 +8,8 @@
 /* Tipografía y colores básicos */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #F9F9F3; /* color claro, simulando ambiente orgánico */
+    background-color: #F9F9F3;
+    /* color claro, simulando ambiente orgánico */
     color: #333;
 }
 
@@ -56,12 +57,14 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: transparent; /* Ahora el fondo "real" lo tiene el body */
+    background-color: transparent;
+    /* Ahora el fondo "real" lo tiene el body */
 }
 
 /* Hero banner */
 .hero-banner {
-    background: #d7e4d2; /* color claro con un tono verdoso */
+    background: #d7e4d2;
+    /* color claro con un tono verdoso */
     border-radius: 8px;
     text-align: center;
     padding: 60px 20px;
@@ -82,7 +85,7 @@ main {
 }
 
 .hero-banner .btn {
-    background-color: #6BA534; 
+    background-color: #6BA534;
     color: #fff;
     padding: 12px 20px;
     border-radius: 4px;
@@ -119,7 +122,7 @@ main {
     border-radius: 8px;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .product-item img {
@@ -140,7 +143,7 @@ main {
 }
 
 .product-item .btn {
-    background-color: #6BA534; 
+    background-color: #6BA534;
     color: #fff;
     padding: 8px 16px;
     border-radius: 4px;
@@ -156,7 +159,8 @@ main {
 /* Elementos generales (formularios, botones, tablas) */
 
 .logo img {
-    width: 200px; /* Cambia el valor según desees */
+    width: 200px;
+    /* Cambia el valor según desees */
     height: auto;
 }
 
@@ -180,7 +184,7 @@ form textarea {
 }
 
 form button[type="submit"] {
-    background-color: #6BA534; 
+    background-color: #6BA534;
     color: #fff;
     padding: 10px 16px;
     border-radius: 4px;
@@ -195,20 +199,24 @@ form button[type="submit"]:hover {
 }
 
 .btn {
-    background-color: #6BA534; /* Verde */
+    background-color: #6BA534;
+    /* Verde */
     color: #fff;
-    border: none;          /* Sin borde */
+    border: none;
+    /* Sin borde */
     padding: 8px 16px;
     border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
     cursor: pointer;
-    display: inline-block; /* Para forzar que un anchor también muestre estilo de botón */
+    display: inline-block;
+    /* Para forzar que un anchor también muestre estilo de botón */
     transition: background-color 0.3s;
 }
 
 .btn:hover {
-    background-color: #5a9130; /* Un verde un poco más oscuro al pasar el mouse */
+    background-color: #5a9130;
+    /* Un verde un poco más oscuro al pasar el mouse */
 }
 
 table {
@@ -217,7 +225,8 @@ table {
     margin-bottom: 20px;
 }
 
-table th, table td {
+table th,
+table td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
