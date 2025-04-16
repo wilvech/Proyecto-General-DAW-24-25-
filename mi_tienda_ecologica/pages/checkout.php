@@ -49,6 +49,39 @@ if (isset($_GET['pay'])) {
 
 <h1>Resumen de Compra</h1>
 <p>Total a pagar: <strong>€<?= $total ?></strong></p>
-<a href="checkout.php?pay=1" class="btn">Pagar ahora</a>
+<script src="https://js.stripe.com/v3/"></script>
+
+<a href="stripe/checkout_session.php" class="btn">Pagar con Stripe</a>
+
+<script>
+const stripe = Stripe('pk_test_TU_CLAVE_PUBLICA'); // Reemplaza con tu clave pública
+
+document.getElementById("checkout-button").addEventListener("click", async () => {
+  const {token, error} = await stripe.createToken('card', {
+    number: '4242424242424242',
+    exp_month: 12,
+    exp_year: 2025,
+    cvc: '123'
+  });
+
+  if (token) {
+    const res = await fetch('payment/charge.php', {
+      method: 'POST',
+      body: JSON.stringify({ token: token.id, amount: <?php echo $total * 100; ?> }) // en céntimos
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      alert('Pago realizado correctamente');
+      window.location.href = 'index.php';
+    } else {
+      alert('Error en el pago: ' + data.error);
+    }
+  } else {
+    alert(error.message);
+  }
+});
+</script>
+
 
 <?php require_once '../includes/footer.php'; ?>
