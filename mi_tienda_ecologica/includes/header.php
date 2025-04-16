@@ -1,6 +1,5 @@
 <?php
-// Inicia la sesión si no está ya iniciada
-if (session_status() == PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 require_once 'db_connect.php';
@@ -17,31 +16,27 @@ require_once 'config.php';
 
 <header>
     <div class="logo">
-        <a href="<?php echo BASE_URL; ?>">
+        <a href="<?php echo BASE_URL; ?>/index.php">
             <img src="<?php echo BASE_URL; ?>/assets/images/logo.png" alt="Logo">
         </a>
     </div>
     <nav class="main-nav">
         <ul>
-            <!-- Enlaces visibles siempre -->
-            <li><a href="<?php echo BASE_URL; ?>/catalog.php">Productos</a></li>
-            <li><a href="<?php echo BASE_URL; ?>/advanced_search.php">Búsqueda avanzada</a></li>
-
-            <?php if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])): ?>
+            <li><a href="<?php echo BASE_URL; ?>/pages/catalog.php">Catálogo</a></li>
+            <li><a href="<?php echo BASE_URL; ?>/pages/advanced_search.php">Buscar</a></li>
+            <?php if (isset($_SESSION['usuario_id'])): ?>
                 <?php if ($_SESSION['usuario_rol'] === 'admin'): ?>
-                    <!-- Opciones solo para administradores -->
-                    <li><a href="<?php echo BASE_URL; ?>/admin/index.php">Menú Administrador</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>/admin/manage_messages.php">Mensajes Contacto</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>/admin/index.php">Admin</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>/admin/manage_messages.php">Mensajes</a></li>
                 <?php endif; ?>
-                <li><a href="<?php echo BASE_URL; ?>/cart.php">Carrito</a></li>
-                <li><a href="<?php echo BASE_URL; ?>/contact.php">Contacto</a></li>
-                <li><a href="<?php echo BASE_URL; ?>/logout.php">Cerrar Sesión</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/pages/cart.php">Carrito</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/pages/contact.php">Contacto</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/auth/logout.php">Salir</a></li>
             <?php else: ?>
-                <!-- Opciones para usuarios no logueados -->
-                <li><a href="<?php echo BASE_URL; ?>/register.php">Registro</a></li>
-                <li><a href="<?php echo BASE_URL; ?>/login.php">Login</a></li>
-                <li><a href="<?php echo BASE_URL; ?>/cart.php">Carrito</a></li>
-                <li><a href="<?php echo BASE_URL; ?>/contact.php">Contacto</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/auth/register.php">Registro</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/auth/login.php">Login</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/pages/cart.php">Carrito</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/pages/contact.php">Contacto</a></li>
             <?php endif; ?>
         </ul>
     </nav>

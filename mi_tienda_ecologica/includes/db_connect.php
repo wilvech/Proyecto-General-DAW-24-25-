@@ -7,6 +7,6 @@ try {
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
     ]);
 } catch (PDOException $e) {
-    die("Error de conexión a la base de datos: " . $e->getMessage());
+    die("Error de conexión: " . $e->getMessage());
 }
 ?>
