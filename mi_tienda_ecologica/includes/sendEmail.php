@@ -4,32 +4,30 @@ use PHPMailer\PHPMailer\Exception;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-function sendEmail($to, $subject, $message, $from = 'noreply@tiendaecologica.com') {
+function sendEmail($to, $subject, $message, $from = 'ecotiendapro@gmail.com') {
     $mail = new PHPMailer(true);
 
     try {
-        // Configuración SMTP para Mailtrap
+        // Configurar SMTP de Gmail
         $mail->isSMTP();
-        $mail->Host = 'sandbox.smtp.mailtrap.io';
+        $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = '64e957fdd3fdc4';
-        $mail->Password = 'f4d70e96741c12';
-        $mail->Port = 587;
+        $mail->Username = 'ecotiendapro@gmail.com';
+        $mail->Password = 'gxix dsbw zrtt cnky';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
         $mail->setFrom($from, 'Tienda Ecológica');
         $mail->addAddress($to);
-        $mail->addReplyTo($from);
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        $mail->Body = $message;
+        $mail->Body    = $message;
 
         $mail->send();
         return true;
     } catch (Exception $e) {
-        error_log("PHPMailer Error: {$mail->ErrorInfo}");
-        echo "<pre>PHPMailer Error: {$mail->ErrorInfo}</pre>"; //para depurar
+        error_log("Error al enviar correo: {$mail->ErrorInfo}");
         return false;
     }
 }

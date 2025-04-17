@@ -15,19 +15,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':mensaje' => $mensaje
         ]);
 
-        // Enviar a Mailtrap simulando que el admin recibe el mensaje
-        $contenido = "Nuevo mensaje de contacto:<br><br>
-                      <strong>Nombre:</strong> $nombre<br>
-                      <strong>Email:</strong> $email<br>
-                      <strong>Mensaje:</strong><br>$mensaje";
+        // Notificación al admin
+        $contenidoAdmin = "Nuevo mensaje de contacto:<br><br>
+                          <strong>Nombre:</strong> $nombre<br>
+                          <strong>Email:</strong> $email<br>
+                          <strong>Mensaje:</strong><br>$mensaje";
+        sendEmail('ecotiendapro@gmail.com', 'Nuevo mensaje de contacto', $contenidoAdmin);
 
-        $enviado = sendEmail('ecotiendapro@gmail.com', 'Nuevo mensaje de contacto', $contenido, $email);
+        // Confirmación al usuario
+        $contenidoUsuario = "Hola $nombre,<br><br>Gracias por tu mensaje. Te responderemos lo antes posible.<br><br>Saludos,<br><strong>Tienda Ecológica</strong>";
+        sendEmail($email, 'Confirmación de contacto - Tienda Ecológica', $contenidoUsuario);
 
-        if ($enviado) {
-            echo "<p>Mensaje enviado correctamente. Gracias por contactarnos.</p>";
-        } else {
-            echo "<p style='color:red'>Error al enviar el mensaje. Inténtalo más tarde.</p>";
-        }
+        echo "<p>Mensaje enviado correctamente. Gracias por contactarnos.</p>";
     } else {
         echo "<p style='color:red'>Por favor, completa todos los campos correctamente.</p>";
     }

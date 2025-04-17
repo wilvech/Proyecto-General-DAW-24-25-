@@ -19,9 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $resetUrl = BASE_URL . "/auth/reset_password.php?token=$token";
         $subject = "Recuperación de contraseña";
-        $message = "Haz clic en este enlace para restablecer tu contraseña: <a href='$resetUrl'>$resetUrl</a>";
+        $message = "Hola,<br><br>Haz clic en el siguiente enlace para restablecer tu contraseña:<br><br>
+                    <a href='$resetUrl'>$resetUrl</a><br><br>Este enlace es válido por 1 hora.";
 
-        if (sendEmail($email, 'Soporte Tienda', $subject, $message)) {
+        if (sendEmail($email, $subject, $message)) {
             $_SESSION['flash_success'] = "Se ha enviado un enlace de recuperación a tu correo.";
         } else {
             $_SESSION['flash_error'] = "Error al enviar el correo.";
