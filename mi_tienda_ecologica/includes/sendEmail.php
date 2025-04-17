@@ -2,22 +2,22 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require_once '../vendor/autoload.php'; // Asegúrate de que Composer esté instalado
+require_once __DIR__ . '/../vendor/autoload.php';
 
-function sendEmail($from_email, $from_name, $subject, $message) {
+function sendEmail($to, $subject, $message, $from = 'noreply@tiendaecologica.com') {
     $mail = new PHPMailer(true);
 
     try {
+        // Configuración SMTP para Mailtrap
         $mail->isSMTP();
-        $mail->Host = MAILTRAP_HOST;
+        $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
-        $mail->Username = MAILTRAP_USER;
-        $mail->Password = MAILTRAP_PASS;
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = MAILTRAP_PORT;
+        $mail->Username = '64e957fdd3fdc4'; // tu usuario Mailtrap
+        $mail->Password = '1c12';           // tu contraseña Mailtrap
+        $mail->Port = 587;
 
-        $mail->setFrom($from_email, $from_name);
-        $mail->addAddress(MAILTRAP_TO);
+        $mail->setFrom($from, 'Tienda Ecológica');
+        $mail->addAddress($to);
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
@@ -26,7 +26,7 @@ function sendEmail($from_email, $from_name, $subject, $message) {
         $mail->send();
         return true;
     } catch (Exception $e) {
-        error_log("Error enviando correo: " . $mail->ErrorInfo);
+        error_log("Error enviando correo: {$mail->ErrorInfo}");
         return false;
     }
 }

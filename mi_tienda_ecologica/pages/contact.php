@@ -3,25 +3,33 @@ require_once '../includes/header.php';
 require_once '../includes/sendEmail.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre = $_POST['nombre'];
-    $email = $_POST['email'];
-    $mensaje = $_POST['mensaje'];
+    $nombre = htmlspecialchars(trim($_POST['nombre']));
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $mensaje = htmlspecialchars(trim($_POST['mensaje']));
 
-    $stmt = $pdo->prepare("INSERT INTO mensajes_contacto (nombre, email, mensaje) VALUES (:nombre, :email, :mensaje)");
-    $stmt->execute([
-        ':nombre' => $nombre,
-        ':email' => $email,
-        ':mensaje' => $mensaje
-    ]);
+    if ($email && $nombre && $mensaje) {
+        $stmt = $pdo->prepare("INSERT INTO mensajes_contacto (nombre, email, mensaje) VALUES (:nombre, :email, :mensaje)");
+        $stmt->execute([
+            ':nombre' => $nombre,
+            ':email' => $email,
+            ':mensaje' => $mensaje
+        ]);
 
-    // Enviar notificación a administrador
-    $contenido = "Nuevo mensaje de contacto:<br><br>Nombre: $nombre<br>Email: $email<br>Mensaje:<br>$mensaje";
-    $enviado = sendEmail('ecotiendapro@gmail.com', 'Nuevo mensaje de contacto', $contenido);
+        // Enviar a Mailtrap simulando que el admin recibe el mensaje
+        $contenido = "Nuevo mensaje de contacto:<br><br>
+                      <strong>Nombre:</strong> $nombre<br>
+                      <strong>Email:</strong> $email<br>
+                      <strong>Mensaje:</strong><br>$mensaje";
 
-    if ($enviado) {
-        echo "<p>Mensaje enviado correctamente. Gracias por contactarnos.</p>";
+        $enviado = sendEmail('ecotiendapro@gmail.com', 'Nuevo mensaje de contacto', $contenido, $email);
+
+        if ($enviado) {
+            echo "<p>Mensaje enviado correctamente. Gracias por contactarnos.</p>";
+        } else {
+            echo "<p style='color:red'>Error al enviar el mensaje. Inténtalo más tarde.</p>";
+        }
     } else {
-        echo "<p>Error al enviar el mensaje. Inténtalo más tarde.</p>";
+        echo "<p style='color:red'>Por favor, completa todos los campos correctamente.</p>";
     }
 }
 ?>
