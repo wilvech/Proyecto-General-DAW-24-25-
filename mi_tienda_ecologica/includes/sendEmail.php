@@ -12,21 +12,24 @@ function sendEmail($to, $subject, $message, $from = 'noreply@tiendaecologica.com
         $mail->isSMTP();
         $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
-        $mail->Username = '64e957fdd3fdc4'; // tu usuario Mailtrap
-        $mail->Password = '1c12';           // tu contraseña Mailtrap
+        $mail->Username = '64e957fdd3fdc4';
+        $mail->Password = 'f4d70e96741c12';
         $mail->Port = 587;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
         $mail->setFrom($from, 'Tienda Ecológica');
         $mail->addAddress($to);
+        $mail->addReplyTo($from);
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        $mail->Body    = $message;
+        $mail->Body = $message;
 
         $mail->send();
         return true;
     } catch (Exception $e) {
-        error_log("Error enviando correo: {$mail->ErrorInfo}");
+        error_log("PHPMailer Error: {$mail->ErrorInfo}");
+        echo "<pre>PHPMailer Error: {$mail->ErrorInfo}</pre>"; //para depurar
         return false;
     }
 }
