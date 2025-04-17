@@ -6,7 +6,7 @@ $categoriaSeleccionada = $_GET['categoria'] ?? '';
 $stmtCategorias = $pdo->query("SELECT DISTINCT categoria FROM productos");
 $categorias = $stmtCategorias->fetchAll(PDO::FETCH_COLUMN);
 
-if ($categoriaSeleccionada !== '') {
+if ($categoriaSeleccionada != '') {
     $stmt = $pdo->prepare("SELECT * FROM productos WHERE categoria = :categoria");
     $stmt->execute([':categoria' => $categoriaSeleccionada]);
 } else {
@@ -28,10 +28,10 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="product-grid">
     <?php foreach ($productos as $prod): ?>
         <div class="product-item">
-            <img src="<?= BASE_URL ?>/assets/images/productos/<?= htmlspecialchars($prod['imagen']) ?>" alt="<?= htmlspecialchars($prod['nombre']) ?>" />
+            <img src="<?= htmlspecialchars($prod['imagen']) ?>" alt="<?= htmlspecialchars($prod['nombre']) ?>" />
             <h3><?= htmlspecialchars($prod['nombre']) ?></h3>
             <p>€<?= htmlspecialchars($prod['precio']) ?></p>
-            <a href="<?= BASE_URL ?>/pages/cart.php?add=<?= $prod['id'] ?>" class="btn">Añadir al carrito</a>
+            <a href="cart.php?add=<?= $prod['id'] ?>" class="btn">Añadir al carrito</a>
         </div>
     <?php endforeach; ?>
 </div>

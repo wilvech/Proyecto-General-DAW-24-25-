@@ -1,7 +1,7 @@
 </main>
 
 <footer>
-    <p>&copy; <?= date('Y') ?> - <?= SITE_NAME ?></p>
+    <p>&copy; <?php echo date('Y'); ?> Tienda Ecológica</p>
 </footer>
 
 </body>

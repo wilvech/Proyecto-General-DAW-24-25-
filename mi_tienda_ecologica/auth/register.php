@@ -19,11 +19,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 
     if ($success) {
-        $_SESSION['flash_success'] = 'Registro exitoso. Ahora puedes iniciar sesión.';
+        $_SESSION['flash_success'] = "Registro exitoso. Ya puedes iniciar sesión.";
         header('Location: login.php');
         exit;
     } else {
-        $_SESSION['flash_error'] = 'Error al registrar. Intenta con otro correo.';
+        $_SESSION['flash_error'] = "Error al registrar. Intenta con otro correo.";
     }
 }
 ?>

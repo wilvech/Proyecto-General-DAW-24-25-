@@ -1,5 +1,6 @@
 <?php
 require_once '../includes/header.php';
+require_once '../includes/sendEmail.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
@@ -13,7 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ':mensaje' => $mensaje
     ]);
 
-    echo "<p>Gracias por tu mensaje. Te responderemos pronto.</p>";
+    // Enviar notificación a administrador
+    $contenido = "Nuevo mensaje de contacto:<br><br>Nombre: $nombre<br>Email: $email<br>Mensaje:<br>$mensaje";
+    $enviado = sendEmail('ecotiendapro@gmail.com', 'Nuevo mensaje de contacto', $contenido);
+
+    if ($enviado) {
+        echo "<p>Mensaje enviado correctamente. Gracias por contactarnos.</p>";
+    } else {
+        echo "<p>Error al enviar el mensaje. Inténtalo más tarde.</p>";
+    }
 }
 ?>
 

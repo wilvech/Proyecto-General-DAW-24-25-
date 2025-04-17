@@ -1,6 +1,8 @@
-.qodo
 /vendor/
 .env
-.DS_Store
 *.log
 *.sqlite
+.DS_Store
+*.bak
+*.tmp
+.idea/

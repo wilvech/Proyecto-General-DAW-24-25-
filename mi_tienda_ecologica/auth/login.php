@@ -14,11 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['usuario_id'] = $user['id'];
         $_SESSION['usuario_email'] = $user['email'];
         $_SESSION['usuario_rol'] = $user['rol'];
-        $_SESSION['flash_success'] = 'Bienvenido, ' . htmlspecialchars($user['nombre']);
         header('Location: ../index.php');
         exit;
     } else {
-        $_SESSION['flash_error'] = 'Credenciales incorrectas';
+        $_SESSION['flash_error'] = "Credenciales inválidas.";
     }
 }
 ?>
@@ -32,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 
 <p>¿No tienes cuenta? <a href="register.php">Regístrate aquí</a></p>
+<p>¿Eres trabajador? <a href="register_admin.php">Registro de Trabajadores</a></p>
 <p>¿Olvidaste tu contraseña? <a href="forgot_password.php">Recupérala aquí</a></p>
 
 <?php require_once '../includes/footer.php'; ?>

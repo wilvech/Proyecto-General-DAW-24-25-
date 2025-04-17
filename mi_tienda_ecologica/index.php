@@ -12,11 +12,10 @@ require_once 'includes/header.php';
     <h2>Productos Destacados</h2>
     <div class="product-grid">
         <?php
-        $stmt = $pdo->query("SELECT * FROM productos ORDER BY id DESC LIMIT 4");
+        $stmt = $pdo->query("SELECT * FROM productos ORDER BY RAND() LIMIT 4");
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<div class='product-item'>";
-            /*echo "<img src='" . BASE_URL . "/assets/images/productos/" . htmlspecialchars($row['imagen']) . "' alt='" . htmlspecialchars($row['nombre']) . "' />";*/
-            echo "<img src='assets/images/productos/" . htmlspecialchars($row['imagen']) . "' alt='" . htmlspecialchars($row['nombre']) . "' />";
+            echo "<img src='" . htmlspecialchars($row['imagen']) . "' alt='" . htmlspecialchars($row['nombre']) . "' />";
             echo "<h3>" . htmlspecialchars($row['nombre']) . "</h3>";
             echo "<p>€" . htmlspecialchars($row['precio']) . "</p>";
             echo "<a href='pages/cart.php?add=" . $row['id'] . "' class='btn'>Añadir al carrito</a>";
@@ -24,6 +23,11 @@ require_once 'includes/header.php';
         }
         ?>
     </div>
+</section>
+
+<section style="margin-top:40px; text-align:center;">
+    <h3>¿Eres trabajador o administrador?</h3>
+    <a href="auth/login.php" class="btn">Acceso para administradores</a>
 </section>
 
 <?php require_once 'includes/footer.php'; ?>

@@ -10,9 +10,10 @@ if (!isset($_SESSION['usuario_id'])) {
 ?>
 
 <h1>Panel del Usuario</h1>
-<p>Bienvenido/a <?= htmlspecialchars($_SESSION['usuario_email']) ?></p>
-<p>Desde aquí puedes gestionar tu perfil, tus pedidos y más funcionalidades futuras.</p>
+<p>Bienvenido/a, <?= htmlspecialchars($_SESSION['usuario_email']) ?></p>
+<p>Desde aquí puedes gestionar tu perfil y ver el catálogo.</p>
 
 <a href="profile.php" class="btn">Ver Perfil</a>
+<a href="catalog.php" class="btn">Ir al Catálogo</a>
 
 <?php require_once '../includes/footer.php'; ?>

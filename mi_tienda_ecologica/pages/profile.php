@@ -10,7 +10,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
 $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
 $stmt->execute([':id' => $_SESSION['usuario_id']]);
-$user = $stmt->fetch();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <h1>Mi Perfil</h1>
