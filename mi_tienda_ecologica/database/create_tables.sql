@@ -77,22 +77,10 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 ('Melocotón Amarillo Bio', 'Melocotones amarillos de cultivo ecológico, jugosos y aromáticos. Ricos en vitaminas A y C.', 2.20, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/67.jpg', 70),
 ('Uva Roja Sin Semilla Ecológica', 'Uvas rojas sin semilla, cultivadas ecológicamente. Dulces y crujientes, ideales para snacks y ensaladas.', 2.80, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/68.jpg', 110),
 ('Cereza Orgánica del Valle del Jerte', 'Cerezas del Valle del Jerte, recolectadas a mano y sin pesticidas. Sabor intenso y textura firme.', 3.00, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/69.jpg', 60),
-('Mango Ecológico de Málaga', 'Mangos cultivados en Málaga de forma ecológica, con pulpa dulce y jugosa. Ricos en vitamina A y antioxidantes.', 2.50, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/70.jpg', 75),
-
--- Inserción de frutas ecológicas
-INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
-('Manzana Fuji Ecológica', 'Manzanas Fuji cultivadas sin pesticidas, de sabor dulce y textura crujiente. Ricas en antioxidantes y perfectas para consumir frescas o en postres.', 1.50, 'Fruta', 'https://www.freshplaza.es/imagenes/2020/10/ManzanaFuji.jpg', 120),
-('Plátano Canario Bio', 'Plátanos de Canarias ecológicos, madurados al sol, con alto contenido en potasio y fibra. Ideales para meriendas y batidos.', 1.20, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/58.jpg', 150),
-('Pera Conferencia Orgánica', 'Peras Conferencia de cultivo ecológico, jugosas y dulces, con piel fina y carne blanca. Excelentes para postres y ensaladas.', 1.80, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/60.jpg', 100),
-('Naranja Valencia Bio', 'Naranjas Valencia ecológicas, de pulpa jugosa y sabor equilibrado. Ricas en vitamina C, perfectas para zumos y consumo directo.', 1.10, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/63.jpg', 200),
-('Fresa Ecológica de Huelva', 'Fresas cultivadas en Huelva sin químicos, de aroma intenso y sabor dulce. Fuente de vitamina C y antioxidantes.', 2.50, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/64.jpg', 80),
-('Kiwi Verde Orgánico', 'Kiwis verdes ecológicos, con alto contenido en vitamina C y fibra. Sabor ácido-dulce y textura suave.', 2.00, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/66.jpg', 90),
-('Melocotón Amarillo Bio', 'Melocotones amarillos de cultivo ecológico, jugosos y aromáticos. Ricos en vitaminas A y C.', 2.20, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/67.jpg', 70),
-('Uva Roja Sin Semilla Ecológica', 'Uvas rojas sin semilla, cultivadas ecológicamente. Dulces y crujientes, ideales para snacks y ensaladas.', 2.80, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/68.jpg', 110),
-('Cereza Orgánica del Valle del Jerte', 'Cerezas del Valle del Jerte, recolectadas a mano y sin pesticidas. Sabor intenso y textura firme.', 3.00, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/69.jpg', 60),
-('Mango Ecológico de Málaga', 'Mangos cultivados en Málaga de forma ecológica, con pulpa dulce y jugosa. Ricos en vitamina A y antioxidantes.', 2.50, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/70.jpg', 75),
+('Mango Ecológico de Málaga', 'Mangos cultivados en Málaga de forma ecológica, con pulpa dulce y jugosa. Ricos en vitamina A y antioxidantes.', 2.50, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/70.jpg', 75);
 
 -- Inserción de verduras ecológicas
+INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
 ('Zanahoria Ecológica', 'Zanahorias cultivadas sin químicos, ricas en betacarotenos y perfectas para crudos, sopas y guisos.', 0.90, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/01.jpg', 180),
 ('Brócoli Orgánico', 'Brócoli fresco y ecológico, rico en fibra, hierro y vitamina C. Ideal para hervidos y platos al vapor.', 1.80, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/03.jpg', 120),
 ('Berenjena Bio', 'Berenjenas sin pesticidas de piel brillante y carne firme. Perfectas para asados, cremas y guarniciones.', 1.60, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/06.jpg', 90),
@@ -102,9 +90,10 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 ('Lechuga Batavia Bio', 'Lechuga Batavia ecológica, crujiente y fresca. Ideal para ensaladas y acompañamientos.', 1.10, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/11.jpg', 100),
 ('Coliflor Orgánica', 'Coliflor de cultivo ecológico, de sabor suave y textura compacta. Ideal para hornear o gratinar.', 1.70, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/12.jpg', 85),
 ('Apio Verde Bio', 'Apio verde fresco, crujiente y sin pesticidas. Excelente para sopas, jugos y platos depurativos.', 1.20, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/13.jpg', 95),
-('Remolacha Ecológica', 'Remolachas rojas dulces, de cultivo natural. Ricas en hierro, perfectas para jugos y ensaladas.', 1.50, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/14.jpg', 70),
+('Remolacha Ecológica', 'Remolachas rojas dulces, de cultivo natural. Ricas en hierro, perfectas para jugos y ensaladas.', 1.50, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/14.jpg', 70);
 
--- Hierbas Aromáticas Ecológicas 
+
+INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
 ('Perejil Ecológico', 'Perejil fresco de cultivo ecológico, rico en vitamina C. Ideal para dar frescura a sopas, carnes y guisos.', 0.80, 'Hierbas Aromáticas', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/24.jpg', 100),
 ('Albahaca Bio', 'Albahaca cultivada sin pesticidas, muy aromática y perfecta para pestos, ensaladas y pizzas.', 1.20, 'Hierbas Aromáticas', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/25.jpg', 90),
 ('Cilantro Orgánico', 'Cilantro fresco, usado en cocina latinoamericana y asiática. Alto contenido en antioxidantes.', 0.90, 'Hierbas Aromáticas', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/26.jpg', 80),
@@ -114,9 +103,11 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 ('Menta Fresca Bio', 'Menta cultivada orgánicamente, de aroma intenso. Ideal para tés, postres y cócteles.', 0.95, 'Hierbas Aromáticas', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/30.jpg', 65),
 ('Laurel Orgánico', 'Hojas de laurel secas de alta calidad. Muy aromáticas para guisos, lentejas y caldos.', 0.90, 'Hierbas Aromáticas', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/31.jpg', 100),
 ('Cebollino Ecológico', 'Cebollino fresco y picante, sin fertilizantes. Perfecto para decorar platos y añadir sabor.', 1.05, 'Hierbas Aromáticas', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/32.jpg', 90),
-('Eneldo Bio', 'Eneldo fresco de aroma anisado, excelente para pescados, salsas y ensaladas.', 1.10, 'Hierbas Aromáticas', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/33.jpg', 60),
+('Eneldo Bio', 'Eneldo fresco de aroma anisado, excelente para pescados, salsas y ensaladas.', 1.10, 'Hierbas Aromáticas', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/33.jpg', 60);
 
--- Tubérculos Ecológicos
+
+
+INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
 ('Patata Agria', 'Patatas ecológicas ideales para freír y cocer. Cultivadas sin pesticidas, de carne firme y sabor suave.', 1.50, 'Tubérculo', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/49.jpg', 200),
 ('Patata Roja', 'Variedad de patata con piel rojiza, excelente para hervir y ensaladas. Rica en potasio.', 1.60, 'Tubérculo', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/51.jpg', 150),
 ('Boniato Ecológico', 'Boniatos dulces de carne anaranjada, muy nutritivos. Perfectos para hornear o hacer puré.', 2.10, 'Tubérculo', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/59.jpg', 120),
@@ -126,9 +117,10 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 ('Jengibre Fresco', 'Raíz fresca de jengibre ecológico, perfecta para infusiones, cocina asiática y zumos.', 3.10, 'Tubérculo', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/63.jpg', 60),
 ('Cúrcuma Fresca', 'Cúrcuma ecológica en raíz, con propiedades antiinflamatorias. Ideal para currys y batidos.', 3.40, 'Tubérculo', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/64.jpg', 70),
 ('Chirivía Bio', 'Chirivía blanca dulce, alternativa a la zanahoria. Ideal para caldos y asados.', 1.90, 'Tubérculo', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/65.jpg', 75),
-('Remolacha Ecológica', 'Remolacha morada de cultivo ecológico, rica en hierro y antioxidantes. Perfecta para ensaladas.', 1.70, 'Tubérculo', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/66.jpg', 85),
+('Remolacha Ecológica', 'Remolacha morada de cultivo ecológico, rica en hierro y antioxidantes. Perfecta para ensaladas.', 1.70, 'Tubérculo', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/66.jpg', 85);
 
---Frutas Exóticas Ecológicas 
+
+INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
 ('Mango Ecológico', 'Mangos jugosos y aromáticos, ricos en vitamina A y C. Cultivados sin químicos.', 2.80, 'Fruta Exótica', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/107.jpg', 90),
 ('Piña Ecológica', 'Piñas maduras de cultivo ecológico, sabor dulce y ácido. Excelente fuente de bromelina.', 2.50, 'Fruta Exótica', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/108.jpg', 80),
 ('Papaya Bio', 'Papayas grandes y dulces con enzimas digestivas naturales. Textura suave, ideal para el desayuno.', 2.90, 'Fruta Exótica', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/109.jpg', 70),
@@ -138,9 +130,10 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 ('Pitahaya (Fruta del Dragón)', 'Fruta visualmente impactante, sabor suave y textura jugosa. Rica en fibra.', 3.80, 'Fruta Exótica', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/113.jpg', 65),
 ('Granada Bio', 'Fruta de semillas brillantes con alto contenido antioxidante. Ideal en ensaladas o jugos.', 2.60, 'Fruta Exótica', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/114.jpg', 70),
 ('Carambola (Fruta Estrella)', 'Fruta tropical con forma de estrella, sabor entre dulce y ácido. Muy decorativa.', 2.90, 'Fruta Exótica', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/115.jpg', 50),
-('Tamarindo', 'Vaina marrón con pulpa agridulce. Usada en salsas, bebidas y dulces naturales.', 3.10, 'Fruta Exótica', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/116.jpg', 60),
+('Tamarindo', 'Vaina marrón con pulpa agridulce. Usada en salsas, bebidas y dulces naturales.', 3.10, 'Fruta Exótica', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/116.jpg', 60);
 
--- Legumbres Ecológicas
+
+INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
 ('Lentejas Pardinas Ecológicas', 'Lentejas pequeñas, suaves al cocer, ideales para guisos y potajes. Ricas en hierro.', 1.90, 'Legumbre', 'https://cdn0.ecologiaverde.com/es/posts/8/4/8/lentejas_propiedades_y_beneficios_248_600.jpg', 120),
 ('Garbanzos Bio', 'Garbanzos de grano mediano, ideales para hummus, cocido o ensaladas. Muy nutritivos.', 2.20, 'Legumbre', 'https://www.comedera.com/wp-content/uploads/2023/01/Garbanzos-cocidos-shutterstock_1445374936.jpg', 130),
 ('Alubias Blancas', 'Judías blancas ecológicas. Textura suave, perfectas para fabadas o estofados.', 2.00, 'Legumbre', 'https://www.hogarmania.com/archivos/202212/alubias-848x477x80xX.jpg', 100),
@@ -150,10 +143,9 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 ('Lentejas Rojas', 'Lentejas sin piel, se cocinan rápidamente. Suaves y perfectas para sopas.', 2.00, 'Legumbre', 'https://cdn.shopify.com/s/files/1/0607/3548/2273/products/lenteja_roja_partida_organica_grande.jpg', 110),
 ('Azuki Ecológica', 'Legumbre japonesa dulce, ideal para postres o guisos saludables. Alta en fibra.', 3.10, 'Legumbre', 'https://static.wixstatic.com/media/2d3a0b_2df2759a46594eacafc7c1f016a87446~mv2.jpg', 70),
 ('Guisantes Secos Bio', 'Guisantes secos pelados para purés o cremas. Excelente fuente de proteína vegetal.', 1.95, 'Legumbre', 'https://comefruta.es/wp-content/uploads/2014/02/guisantes.jpg', 115),
-('Lentejas Beluga', 'Lentejas negras pequeñas, textura firme y sabor suave. Conocidas como "el caviar vegetal".', 2.75, 'Legumbre', 'https://biogra.eco/wp-content/uploads/2021/11/Lenteja-beluga-eco-500g.png', 80),
+('Lentejas Beluga', 'Lentejas negras pequeñas, textura firme y sabor suave. Conocidas como "el caviar vegetal".', 2.75, 'Legumbre', 'https://biogra.eco/wp-content/uploads/2021/11/Lenteja-beluga-eco-500g.png', 80);
 
--- Panadería Ecológica
-
+INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
 ('Pan Integral de Centeno', 'Pan elaborado con harina de centeno integral ecológica. Rico en fibra, ideal para desayunos saludables.', 2.80, 'Panadería', 'https://www.recetasgratis.net/files/article/pan-de-centeno-ecologico.jpg', 60),
 ('Pan Multicereal', 'Mezcla de harinas integrales y semillas: lino, girasol, sésamo. Crujiente y saciante.', 3.00, 'Panadería', 'https://cdn1.recetasgratis.net/es/posts/3/1/5/pan_multicereal_casero_71513_600.jpg', 50),
 ('Barra de Pan Rústico Bio', 'Barra tradicional de corteza crujiente y miga esponjosa, cocida en horno de piedra.', 1.90, 'Panadería', 'https://images.hola.com/imagenes/cocina/recetas/20200826174286/pan-casero-rustico-receta/0-857-138/pan-rustico-adobe-m.jpg', 70),
@@ -163,10 +155,10 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 ('Pan de Avena', 'Pan suave y esponjoso con avena orgánica, ideal para acompañar platos o sándwiches.', 2.60, 'Panadería', 'https://www.gastrolabweb.com/u/fotografias/m/2023/4/10/f1280x720-60140_222332_5050.jpg', 55),
 ('Panecillos Integrales', 'Panecillos pequeños de harina integral para meriendas o desayunos ecológicos.', 2.30, 'Panadería', 'https://www.recetasgratis.net/files/article/panecillos-integrales-receta.jpg', 90),
 ('Pan de Higo y Nueces', 'Pan semidulce artesanal con trozos de higos y nueces ecológicas. Ideal con quesos.', 3.80, 'Panadería', 'https://www.recetin.com/files/2020/10/pan-higos-nueces.jpg', 40),
-('Pan de Molde Bio', 'Clásico pan de molde orgánico, sin azúcares añadidos. Perfecto para tostadas y sandwiches.', 2.95, 'Panadería', 'https://www.cuerpomente.com/medio/2022/10/20/pan-de-molde-integral_2d16d17d_221020152223_800x800.jpg', 70),
+('Pan de Molde Bio', 'Clásico pan de molde orgánico, sin azúcares añadidos. Perfecto para tostadas y sandwiches.', 2.95, 'Panadería', 'https://www.cuerpomente.com/medio/2022/10/20/pan-de-molde-integral_2d16d17d_221020152223_800x800.jpg', 70);
 
 
--- Snacks Saludables
+INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
 ('Chips de Kale', 'Crujientes chips de col rizada deshidratada con sal marina. Snack bajo en calorías y lleno de antioxidantes.', 2.75, 'Snacks', 'https://www.loveandlemons.com/wp-content/uploads/2023/01/kale-chips.jpg', 70),
 ('Mix de Frutos Secos Bio', 'Mezcla de nueces, almendras, anacardos y pasas sin azúcares añadidos. Fuente natural de energía.', 3.50, 'Snacks', 'https://www.65ymas.com/uploads/s1/68/90/49/bigstock-healthy-nuts-mix-background-n-450065248.jpeg', 100),
 ('Barrita de Avena y Arándanos', 'Barrita energética artesanal con avena integral, miel y arándanos deshidratados.', 1.90, 'Snacks', 'https://cdn1.recetasgratis.net/es/posts/1/2/2/barritas_de_avena_y_arandanos_70221_600.jpg', 85),
@@ -176,10 +168,10 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 ('Mix Frutas Deshidratadas', 'Troceado de mango, piña, manzana y plátano. Sin azúcares añadidos, ideal para picar.', 3.70, 'Snacks', 'https://5aldia.org/wp-content/uploads/2020/08/frutas-deshidratadas-1.jpg', 65),
 ('Bolitas Energéticas de Cacao', 'Pequeñas bolitas crudas con dátiles, cacao puro y semillas. Snack saciante sin procesar.', 2.90, 'Snacks', 'https://recetasveganas.net/wp-content/uploads/2020/06/bolas-energeticas-vegano-cacao.jpg', 60),
 ('Granola Casera Eco', 'Granola de avena, coco, canela y semillas. Crujiente, sin azúcares refinados.', 4.20, 'Snacks', 'https://i.blogs.es/1efdd1/granola-casera-receta/1366_2000.jpg', 70),
-('Barritas de Semillas y Miel', 'Barritas crocantes con sésamo, chía y miel ecológica. Ricas en omega 3 y fibra.', 2.30, 'Snacks', 'https://static01.nyt.com/images/2022/08/15/dining/15asap-recipe/15asap-recipe-threeByTwoMediumAt2X.jpg', 55),
+('Barritas de Semillas y Miel', 'Barritas crocantes con sésamo, chía y miel ecológica. Ricas en omega 3 y fibra.', 2.30, 'Snacks', 'https://static01.nyt.com/images/2022/08/15/dining/15asap-recipe/15asap-recipe-threeByTwoMediumAt2X.jpg', 55);
 
 
--- Bebidas Ecológicas
+INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
 ('Zumo de Naranja Natural', 'Zumo exprimido de naranjas valencianas sin aditivos ni conservantes. Alto contenido en vitamina C.', 2.50, 'Bebidas', 'https://static.elcorreo.com/www/multimedia/202305/11/media/cortadas/zumo-naranja-3-RMlWfKNx04o8uQmeOit5Em1-1200x840@El%20Correo.jpg', 80),
 ('Leche de Almendras Bio', 'Leche vegetal sin azúcares añadidos ni conservantes. Apta para veganos y personas con intolerancia a la lactosa.', 2.90, 'Bebidas', 'https://nutricionsinmas.com/wp-content/uploads/2022/10/leche-almendras.jpg', 100),
 ('Infusión de Menta Ecológica', 'Mezcla natural de hojas de menta orgánicas. Refrescante y digestiva.', 1.70, 'Bebidas', 'https://cdn.shopify.com/s/files/1/0247/3181/4585/articles/menta_infusiones.jpg?v=1679996247', 90),
@@ -189,9 +181,10 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 ('Leche de Avena sin Azúcar', 'Alternativa vegetal suave y cremosa. Ideal para cafés, batidos o repostería.', 2.40, 'Bebidas', 'https://s1.abcstatics.com/media/bienestar/2021/06/14/leche-de-avena-kA1H--1200x630@abc.jpg', 85),
 ('Agua de Coco Natural', 'Bebida isotónica ecológica, ideal para rehidratación tras ejercicio físico. 100% coco.', 2.80, 'Bebidas', 'https://recetinas.com/wp-content/uploads/2020/03/agua-de-coco.jpg', 65),
 ('Té Chai con Especias', 'Mezcla de té negro ecológico con canela, jengibre, clavo y cardamomo. Aroma intenso y reconfortante.', 3.20, 'Bebidas', 'https://www.gastrolabweb.com/u/fotografias/m/2023/2/28/f960x540-29684_90042_5050.jpg', 70),
-('Smoothie Verde Detox', 'Smoothie embotellado de espinacas, manzana, pepino y limón. Refrescante y depurativo.', 4.00, 'Bebidas', 'https://img.freepik.com/fotos-premium/smoothie-verde-espinaca-kiwi-manzana-pepino-sano_128263-3728.jpg', 45),
+('Smoothie Verde Detox', 'Smoothie embotellado de espinacas, manzana, pepino y limón. Refrescante y depurativo.', 4.00, 'Bebidas', 'https://img.freepik.com/fotos-premium/smoothie-verde-espinaca-kiwi-manzana-pepino-sano_128263-3728.jpg', 45);
 
--- Otros productos ecológicos
+
+INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
 ('Aceite de Oliva Virgen Extra', 'Aceite prensado en frío de oliva ecológica. Ideal para aliños, guisos y cocina mediterránea.', 6.90, 'Otros', 'https://cdn.hsnstore.com/blog/wp-content/uploads/2020/10/aceite-de-oliva-virgen-extra-beneficios.jpg', 90),
 ('Semillas de Chía', 'Ricas en omega-3, fibra y proteínas vegetales. Perfectas para yogures, batidos y repostería.', 3.10, 'Otros', 'https://biotrendies.com/wp-content/uploads/2016/04/semillas-chia.jpg', 70),
 ('Harina Integral de Espelta', 'Harina ecológica de espelta molida a piedra. Ideal para panes, pizzas y repostería saludable.', 2.80, 'Otros', 'https://canalcocina.es/medias/images/0000102677HarinaEspelta_620.jpg', 65),
