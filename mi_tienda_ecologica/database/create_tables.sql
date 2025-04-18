@@ -71,11 +71,11 @@ CREATE TABLE IF NOT EXISTS mensajes_contacto (
 
 -- Insertar usuario administrador
 INSERT INTO usuarios (nombre, email, password, direccion, telefono, rol) VALUES 
-('Admin Tienda', 'ecotiendapro@gmail.com', '$2y$10$VRRQWEtYHcNBqOZhVWoAs.nI9xt6Vvw6xjG7SSXEOoP4yEl0NDYfq', 'Calle Central 123', '600000000', 'admin');
+('Admin Tienda', 'ecotiendapro@gmail.com', '$2y$10$qAHr1n/k6IP1jborvM2KH.faPnDd.BltZ3xCp0vv1mP9dzsMw58Da', 'Calle Central 123', '600000000', 'admin');
 
 -- Insertar usuario cliente
 INSERT INTO usuarios (nombre, email, password, direccion, telefono, rol) VALUES 
-('Cliente Demo', 'ecotiendatest@gmail.com', '$2y$10$VRRQWEtYHcNBqOZhVWoAs.nI9xt6Vvw6xjG7SSXEOoP4yEl0NDYfq', 'Calle Lateral 456', '611111111', 'cliente');
+('Cliente Demo', 'ecotiendatest@gmail.com', '$2y$10$qAHr1n/k6IP1jborvM2KH.faPnDd.BltZ3xCp0vv1mP9dzsMw58Da', 'Calle Lateral 456', '611111111', 'cliente');
 
 -- Inserción de frutas ecológicas
 INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
@@ -105,7 +105,7 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 
 
 INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
-('Perejil Ecológico', 'Perejil fresco de cultivo ecológico, rico en vitamina C. Ideal para dar frescura a sopas, carnes y guisos.', 0.80, 'https://img.joomcdn.net/950b354ff1db9b093d787f920360da8ef4f81f27_original.jpeg', 100),
+('Perejil Ecológico', 'Perejil fresco de cultivo ecológico, rico en vitamina C. Ideal para dar frescura a sopas, carnes y guisos.', 0.80, 'Hierbas Aromáticas', 'https://img.joomcdn.net/950b354ff1db9b093d787f920360da8ef4f81f27_original.jpeg', 100),
 ('Albahaca Bio', 'Albahaca cultivada sin pesticidas, muy aromática y perfecta para pestos, ensaladas y pizzas.', 1.20, 'Hierbas Aromáticas', 'https://the-growers.com/wp-content/uploads/2019/04/Basil-Leaves-Closeup.jpg', 90),
 ('Cilantro Orgánico', 'Cilantro fresco, usado en cocina latinoamericana y asiática. Alto contenido en antioxidantes.', 0.90, 'Hierbas Aromáticas', 'https://freshleafuae.com/wp-content/uploads/2024/10/Coriander-leaves-loose-uae-freshleaf-dubai-uae-img01.jpg', 80),
 ('Romero Ecológico', 'Romero silvestre, seco y fresco, ideal para asados, infusiones y marinados. Cultivado sin químicos.', 1.00, 'Hierbas Aromáticas', 'https://nutritionfacts.org/app/uploads/2019/03/Rosemary.jpg', 85),
@@ -179,7 +179,7 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 ('Mix Frutas Deshidratadas', 'Troceado de mango, piña, manzana y plátano. Sin azúcares añadidos, ideal para picar.', 3.70, 'Snacks', 'https://roserclapes.com/467-large_default/mezcla-de-frutas-deshidratadas-sin-azucares-anadidos.jpg', 65),
 ('Bolitas Energéticas de Cacao', 'Pequeñas bolitas crudas con dátiles, cacao puro y semillas. Snack saciante sin procesar.', 2.90, 'Snacks', 'https://d36fw6y2wq3bat.cloudfront.net/recipes/bolitas-energeticas-de-avellana-y-cacao/900/bolitas-energeticas-de-avellana-y-cacao.jpg', 60),
 ('Granola Casera Eco', 'Granola de avena, coco, canela y semillas. Crujiente, sin azúcares refinados.', 4.20, 'Snacks', 'https://s1.elespanol.com/2015/01/19/cocinillas/cocinillas_4509699_116050074_1024x576.jpg', 70),
-('Barritas de Semillas y Miel', 'Barritas crocantes con sésamo, chía y miel ecológica. Ricas en omega 3 y fibra.', 2.30, 'Snacks', 'https://www.ingredissimo.es/wp-content/uploads/2023/08/Barrita-de-cereales-con-miel-y-frutas-header.jpg', 55);
+('Barritas de Semillas y Miel', 'Barritas crocantes con sésamo, chía y miel ecológica. Ricas en omega 3 y fibra.', 2.30, 'Snacks', 'https://imgs.search.brave.com/Uyxv3YqOmmkgs-GcFYDURK1kilJkGddJhu3gLAnRb-s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9va2Rp/YXJpby5jb20vaW1n/LzIwMTgvMDUvMjcv/YmFycml0YXMtZGUt/c2VzYW1vLTY1NXgz/NjguanBn', 55);
 
 
 INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
