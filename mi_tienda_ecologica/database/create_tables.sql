@@ -66,6 +66,17 @@ CREATE TABLE IF NOT EXISTS mensajes_contacto (
   fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Hasheadas desde password_hash('1234,Abcd', PASSWORD_DEFAULT)
+-- Asegúrate de no modificar estas cadenas directamente.
+
+-- Insertar usuario administrador
+INSERT INTO usuarios (nombre, email, password, direccion, telefono, rol) VALUES 
+('Admin Tienda', 'ecotiendapro@gmail.com', '$2y$10$VRRQWEtYHcNBqOZhVWoAs.nI9xt6Vvw6xjG7SSXEOoP4yEl0NDYfq', 'Calle Central 123', '600000000', 'admin');
+
+-- Insertar usuario cliente
+INSERT INTO usuarios (nombre, email, password, direccion, telefono, rol) VALUES 
+('Cliente Demo', 'ecotiendatest@gmail.com', '$2y$10$VRRQWEtYHcNBqOZhVWoAs.nI9xt6Vvw6xjG7SSXEOoP4yEl0NDYfq', 'Calle Lateral 456', '611111111', 'cliente');
+
 -- Inserción de frutas ecológicas
 INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
 ('Manzana Fuji Ecológica', 'Manzanas Fuji cultivadas sin pesticidas, de sabor dulce y textura crujiente. Ricas en antioxidantes y perfectas para consumir frescas o en postres.', 1.50, 'Fruta', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Autumn_glory_apple_cultivar.jpg/960px-Autumn_glory_apple_cultivar.jpg?20201213191505', 120),

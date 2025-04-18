@@ -46,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 
 <p>¿No tienes cuenta? <a href="register.php">Regístrate aquí</a></p>
-<p>¿Eres trabajador? <a href="register_admin.php">Registro de Trabajadores</a></p>
 <p>¿Olvidaste tu contraseña? <a href="forgot_password.php">Recupérala aquí</a></p>
 
 <!-- JavaScript para mostrar/ocultar contraseña -->

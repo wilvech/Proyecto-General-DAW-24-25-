@@ -9,21 +9,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $direccion = $_POST['direccion'];
     $telefono = $_POST['telefono'];
 
-    $stmt = $pdo->prepare("INSERT INTO usuarios (nombre, email, password, direccion, telefono, rol) VALUES (:nombre, :email, :password, :direccion, :telefono, 'cliente')");
-    $success = $stmt->execute([
-        ':nombre' => $nombre,
-        ':email' => $email,
-        ':password' => $password,
-        ':direccion' => $direccion,
-        ':telefono' => $telefono
-    ]);
+    // Correos reservados para registros automáticos
+    $correos_reservados = ['ecotiendapro@gmail.com', 'ecotiendatest@gmail.com'];
 
-    if ($success) {
-        $_SESSION['flash_success'] = "Registro exitoso. Ya puedes iniciar sesión.";
-        header('Location: login.php');
-        exit;
+    if (in_array($email, $correos_reservados)) {
+        $_SESSION['flash_error'] = "Este correo no está disponible para registrarse.";
     } else {
-        $_SESSION['flash_error'] = "Error al registrar. Intenta con otro correo.";
+        $stmt = $pdo->prepare("INSERT INTO usuarios (nombre, email, password, direccion, telefono, rol) 
+                               VALUES (:nombre, :email, :password, :direccion, :telefono, 'cliente')");
+        $success = $stmt->execute([
+            ':nombre' => $nombre,
+            ':email' => $email,
+            ':password' => $password,
+            ':direccion' => $direccion,
+            ':telefono' => $telefono
+        ]);
+
+        if ($success) {
+            $_SESSION['flash_success'] = "Registro exitoso. Ya puedes iniciar sesión.";
+            header('Location: login.php');
+            exit;
+        } else {
+            $_SESSION['flash_error'] = "Error al registrar. Intenta con otro correo.";
+        }
     }
 }
 ?>
@@ -50,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <p>¿Ya tienes una cuenta? <a href="login.php">Inicia sesión</a></p>
 
-<!-- JavaScript para mostrar/ocultar contraseña -->
+<!-- Mostrar / Ocultar contraseña -->
 <script>
 function mostrarPassword() {
     const input = document.getElementById("password");
@@ -58,7 +66,6 @@ function mostrarPassword() {
     input.type = "text";
     icono.src = "<?php echo BASE_URL; ?>/assets/images/eye-open.png";
 }
-
 function ocultarPassword() {
     const input = document.getElementById("password");
     const icono = document.getElementById("icono-ojo");

@@ -25,9 +25,4 @@ require_once 'includes/header.php';
     </div>
 </section>
 
-<section style="margin-top:40px; text-align:center;">
-    <h3>¿Eres trabajador o administrador?</h3>
-    <a href="auth/login.php" class="btn">Acceso para administradores</a>
-</section>
-
 <?php require_once 'includes/footer.php'; ?>
