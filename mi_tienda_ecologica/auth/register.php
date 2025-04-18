@@ -31,14 +31,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <h1>Registro de Usuario</h1>
 
 <form method="POST">
-    <label>Nombre: <input type="text" name="nombre" required></label>
-    <label>Email: <input type="email" name="email" required></label>
-    <label>Contraseña: <input type="password" name="password" required></label>
-    <label>Dirección: <input type="text" name="direccion"></label>
-    <label>Teléfono: <input type="text" name="telefono"></label>
+    <label>Nombre:</label>
+    <input type="text" name="nombre" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <?php include '../includes/campo_password.php'; ?>
+
+    <label>Dirección:</label>
+    <input type="text" name="direccion">
+
+    <label>Teléfono:</label>
+    <input type="text" name="telefono">
+
     <button type="submit" class="btn">Registrar</button>
 </form>
 
 <p>¿Ya tienes una cuenta? <a href="login.php">Inicia sesión</a></p>
+
+<!-- JavaScript para mostrar/ocultar contraseña -->
+<script>
+function mostrarPassword() {
+    const input = document.getElementById("password");
+    const icono = document.getElementById("icono-ojo");
+    input.type = "text";
+    icono.src = "<?php echo BASE_URL; ?>/assets/images/eye-open.png";
+}
+
+function ocultarPassword() {
+    const input = document.getElementById("password");
+    const icono = document.getElementById("icono-ojo");
+    input.type = "password";
+    icono.src = "<?php echo BASE_URL; ?>/assets/images/eye-closed.png";
+}
+</script>
 
 <?php require_once '../includes/footer.php'; ?>

@@ -54,13 +54,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php include_once '../components/flash_message.php'; ?>
 
 <form method="POST">
-    <label>Nueva Contraseña:<br>
-        <input type="password" name="password" required>
-    </label><br><br>
-    <label>Confirmar Contraseña:<br>
-        <input type="password" name="confirm_password" required>
-    </label><br><br>
-    <button type="submit" class="btn">Actualizar</button>
+    <label for="password">Nueva Contraseña:</label>
+    <div class="password-container">
+        <input type="password" name="password" id="password" required>
+        <img id="icono-ojo1" class="toggle-password-img"
+             src="<?php echo BASE_URL; ?>/assets/images/eye-closed.png"
+             alt="Mostrar contraseña"
+             onmousedown="mostrarPassword('password', 'icono-ojo1')"
+             onmouseup="ocultarPassword('password', 'icono-ojo1')"
+             onmouseleave="ocultarPassword('password', 'icono-ojo1')">
+    </div>
+    <br>
+
+    <label for="confirm_password">Confirmar Contraseña:</label>
+    <div class="password-container">
+        <input type="password" name="confirm_password" id="confirm_password" required>
+        <img id="icono-ojo2" class="toggle-password-img"
+             src="<?php echo BASE_URL; ?>/assets/images/eye-closed.png"
+             alt="Mostrar contraseña"
+             onmousedown="mostrarPassword('confirm_password', 'icono-ojo2')"
+             onmouseup="ocultarPassword('confirm_password', 'icono-ojo2')"
+             onmouseleave="ocultarPassword('confirm_password', 'icono-ojo2')">
+    </div>
+
+    <br><button type="submit" class="btn">Actualizar</button>
 </form>
+
+<!-- JavaScript para ambas contraseñas -->
+<script>
+function mostrarPassword(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icono = document.getElementById(iconId);
+    input.type = "text";
+    icono.src = "<?php echo BASE_URL; ?>/assets/images/eye-open.png";
+}
+
+function ocultarPassword(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icono = document.getElementById(iconId);
+    input.type = "password";
+    icono.src = "<?php echo BASE_URL; ?>/assets/images/eye-closed.png";
+}
+</script>
 
 <?php require_once '../includes/footer.php'; ?>

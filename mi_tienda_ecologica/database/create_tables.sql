@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS mensajes_contacto (
 
 -- Inserción de frutas ecológicas
 INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
-('Manzana Fuji Ecológica', 'Manzanas Fuji cultivadas sin pesticidas, de sabor dulce y textura crujiente. Ricas en antioxidantes y perfectas para consumir frescas o en postres.', 1.50, 'Fruta', 'https://www.freshplaza.es/imagenes/2020/10/ManzanaFuji.jpg', 120),
+('Manzana Fuji Ecológica', 'Manzanas Fuji cultivadas sin pesticidas, de sabor dulce y textura crujiente. Ricas en antioxidantes y perfectas para consumir frescas o en postres.', 1.50, 'Fruta', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Autumn_glory_apple_cultivar.jpg/960px-Autumn_glory_apple_cultivar.jpg?20201213191505', 120),
 ('Plátano Canario Bio', 'Plátanos de Canarias ecológicos, madurados al sol, con alto contenido en potasio y fibra. Ideales para meriendas y batidos.', 1.20, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/58.jpg', 150),
 ('Pera Conferencia Orgánica', 'Peras Conferencia de cultivo ecológico, jugosas y dulces, con piel fina y carne blanca. Excelentes para postres y ensaladas.', 1.80, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/60.jpg', 100),
 ('Naranja Valencia Bio', 'Naranjas Valencia ecológicas, de pulpa jugosa y sabor equilibrado. Ricas en vitamina C, perfectas para zumos y consumo directo.', 1.10, 'Fruta', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/63.jpg', 200),
@@ -81,7 +81,7 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 
 -- Inserción de verduras ecológicas
 INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VALUES
-('Zanahoria Ecológica', 'Zanahorias cultivadas sin químicos, ricas en betacarotenos y perfectas para crudos, sopas y guisos.', 0.90, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/01.jpg', 180),
+('Zanahoria Ecológica', 'Zanahorias cultivadas sin químicos, ricas en betacarotenos y perfectas para crudos, sopas y guisos.', 0.90, 'Verdura', 'https://soycomocomo.es/media/2019/03/zanahorias.jpg', 180),
 ('Brócoli Orgánico', 'Brócoli fresco y ecológico, rico en fibra, hierro y vitamina C. Ideal para hervidos y platos al vapor.', 1.80, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/03.jpg', 120),
 ('Berenjena Bio', 'Berenjenas sin pesticidas de piel brillante y carne firme. Perfectas para asados, cremas y guarniciones.', 1.60, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/06.jpg', 90),
 ('Pimiento Rojo Ecológico', 'Pimientos rojos carnosos cultivados de forma natural. Muy ricos en vitamina C y antioxidantes.', 1.90, 'Verdura', 'https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/07.jpg', 130),

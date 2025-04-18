@@ -25,8 +25,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <h1>Iniciar Sesión</h1>
 
 <form method="POST">
-    <label>Email: <input type="email" name="email" required></label>
-    <label>Contraseña: <input type="password" name="password" required></label>
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label for="password">Contraseña:</label>
+<div class="password-container">
+    <input type="password" name="password" id="password" required>
+    <img id="icono-ojo" class="toggle-password-img"
+         src="<?php echo BASE_URL; ?>/assets/images/eye-closed.png"
+         alt="Mostrar contraseña"
+         onmousedown="mostrarPassword()"
+         onmouseup="ocultarPassword()"
+         onmouseleave="ocultarPassword()">
+</div>
+
+
+
+
     <button type="submit" class="btn">Entrar</button>
 </form>
 
@@ -34,4 +49,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <p>¿Eres trabajador? <a href="register_admin.php">Registro de Trabajadores</a></p>
 <p>¿Olvidaste tu contraseña? <a href="forgot_password.php">Recupérala aquí</a></p>
 
-<?php require_once '../includes/footer.php'; ?>
+<!-- JavaScript para mostrar/ocultar contraseña -->
+<script>
+function mostrarPassword() {
+    const passwordInput = document.getElementById("password");
+    const iconoOjo = document.getElementById("icono-ojo");
+
+    passwordInput.type = "text";
+    iconoOjo.src = "<?php echo BASE_URL; ?>/assets/images/eye-open.png";
+}
+
+function ocultarPassword() {
+    const passwordInput = document.getElementById("password");
+    const iconoOjo = document.getElementById("icono-ojo");
+
+    passwordInput.type = "password";
+    iconoOjo.src = "<?php echo BASE_URL; ?>/assets/images/eye-closed.png";
+}
+</script>
