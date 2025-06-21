@@ -1,9 +1,0 @@
-# Habilitar URLs limpias si usas Apache con mod_rewrite
-RewriteEngine On
-RewriteBase /mi_tienda_ecologica/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)$ index.php [QSA,L]
-
-# Forzar UTF-8
-AddDefaultCharset UTF-8
