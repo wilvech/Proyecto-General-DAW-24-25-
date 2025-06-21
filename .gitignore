@@ -1,0 +1,8 @@
+/vendor/
+.env
+*.log
+*.sqlite
+.DS_Store
+*.bak
+*.tmp
+.idea/
