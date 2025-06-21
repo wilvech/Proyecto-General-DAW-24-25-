@@ -190,7 +190,7 @@ INSERT INTO productos (nombre, descripcion, precio, categoria, imagen, stock) VA
 ('Zumo de Granada', 'Zumo 100% de granada ecológica, antioxidante y revitalizante. Ideal en ayunas.', 3.40, 'Bebidas', 'https://imag.bonviveur.com/zumo-de-granada.jpg', 70),
 ('Kombucha de Frutos Rojos', 'Bebida fermentada con probióticos naturales. Mejora la digestión y fortalece el sistema inmune.', 3.90, 'Bebidas', 'https://www.biosano.es/cdnassets/products/large/komvida-frutos-rojos-berryvida-750.png', 50),
 ('Leche de Avena sin Azúcar', 'Alternativa vegetal suave y cremosa. Ideal para cafés, batidos o repostería.', 2.40, 'Bebidas', 'https://us-central1-yema-cdn.cloudfunctions.net/cdn/api/v1/yema-plm/images/view/productImage/18985-bebida-de-avena-y-linaza-sin-azucar-natures-heart-1_cee3b509-acce-41bd-a86b-e17919d924c0=fjpg-q80-tcrop-w688', 85),
-('Agua de Coco Natural', 'Bebida isotónica ecológica, ideal para rehidratación tras ejercicio físico. 100% coco.', 2.80, 'Bebidas', 'https://www.finedininglovers.com/es/sites/g/files/xknfdk1706/files/2022-07/agua-de-coco%C2%A9iStock.jpg', 65),
+('Agua de Coco Natural', 'Bebida isotónica ecológica, ideal para rehidratación tras ejercicio físico. 100% coco.', 2.80, 'Bebidas', 'https://image.tuasaude.com/media/article/oa/rg/beneficios-del-agua-de-coco_65911.jpg', 65),
 ('Té Chai con Especias', 'Mezcla de té negro ecológico con canela, jengibre, clavo y cardamomo. Aroma intenso y reconfortante.', 3.20, 'Bebidas', 'https://puntodete.com/img/cms/blog/T%C3%89-VERDE-SHANGHAI-CHAI.jpg', 70),
 ('Smoothie Verde Detox', 'Smoothie embotellado de espinacas, manzana, pepino y limón. Refrescante y depurativo.', 4.00, 'Bebidas', 'https://www.iberochef.com/blog/wp-content/uploads/2019/05/zumo-manzana-espinaca.jpg', 45);
 

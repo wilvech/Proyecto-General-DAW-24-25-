@@ -203,3 +203,11 @@
     margin-bottom: 20px;
   }
   
+  /* Uniformiza el tamaño de las imágenes */
+.img-producto {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px auto;
+}
